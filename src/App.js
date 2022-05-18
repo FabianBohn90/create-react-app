@@ -13,10 +13,12 @@ function App(props) {
 
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
+    setTasks([...tasks, newTask]);
+  }
 
 
 
-    const taskList = tasks.map(task => (
+  const taskList = tasks.map(task => (
       <Todo
         id={task.id}
         name={task.name}
