@@ -10,8 +10,19 @@ function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
 
+  function deleteTask(id) {
+    console.log(id)
+  }
+
+
   function toggleTaskCompleted(id) {
-    console.log(tasks[0])
+    const updatedTasks = tasks.map(task => {
+      if (id === task.id) {
+        return {...task, completed: !task.completed}
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
   }
 
 
@@ -29,6 +40,7 @@ function App(props) {
         completed={task.completed}
         key={task.id}
         toggleTaskCompleted={toggleTaskCompleted}
+        deleteTask={deleteTask}
       />
     )
   );
