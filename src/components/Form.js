@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-
+import React, {useState} from "react";
 
 
 function Form(props) {
@@ -18,11 +16,10 @@ function Form(props) {
   }
 
 
-
   return (
     <form onSubmit={handleSubmit}>
 
-    <h2 className="label-wrapper">
+      <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
           What needs to be done?
         </label>
